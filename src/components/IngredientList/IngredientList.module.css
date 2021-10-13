@@ -19,7 +19,7 @@
 }
 
 .section > ul > li {
-  border: 0.5px solid black;
+  border-bottom: 0.5px solid black;
   margin-block: 2.5px;
   padding-inline: 5px;
   place-items: center;

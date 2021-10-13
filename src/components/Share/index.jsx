@@ -3,23 +3,25 @@ import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import shareIcon from '../../images/shareIcon.svg';
+import style from './Share.module.css';
 
 const Share = ({ dataTestId, destinationUrl }) => {
   const [showCopied, setShowCopied] = useState(false);
   return (
-    <Button
-      // dataTestId={ dataTestId }
-      onClick={ () => copy(destinationUrl).then(() => {
-        setShowCopied(true);
-      }) }
-    >
-      <img
-        data-testid={ dataTestId }
-        src={ shareIcon }
-        alt="share icon"
-      />
-      {showCopied && 'Link copiado!'}
-    </Button>
+    <article className={ style.article }>
+      <Button
+        onClick={ () => copy(destinationUrl).then(() => {
+          setShowCopied(true);
+        }) }
+      >
+        <img
+          data-testid={ dataTestId }
+          src={ shareIcon }
+          alt="share icon"
+        />
+        {showCopied && 'Link copiado!'}
+      </Button>
+    </article>
   );
 };
 

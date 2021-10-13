@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-// import { useLocation } from 'react-router';
 import Context from '../../context/Context';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import Button from '../Button';
+import style from './Liked.module.css';
 
 const Liked = ({ recipe, dataTestId }) => {
   const { handleFavorites, appState: { favoriteRecipes } } = useContext(Context);
@@ -20,13 +20,16 @@ const Liked = ({ recipe, dataTestId }) => {
   }, [recipe, favoriteRecipes, verifyId]);
 
   return (
-    <Button onClick={ () => handleFavorites({ recipe, verifyId }) }>
-      <img
-        data-testid={ dataTestId }
-        src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
-        alt={ isFavorite ? 'Favoritado' : 'Não favoritado' }
-      />
-    </Button>
+    <article className={ style.article }>
+      <Button onClick={ () => handleFavorites({ recipe, verifyId }) }>
+        <img
+          title="Favoritar"
+          data-testid={ dataTestId }
+          src={ isFavorite ? blackHeartIcon : whiteHeartIcon }
+          alt={ isFavorite ? 'Favoritado' : 'Não favoritado' }
+        />
+      </Button>
+    </article>
   );
 };
 
