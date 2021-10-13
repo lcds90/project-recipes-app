@@ -26,7 +26,7 @@ const Login = () => {
     <section className={ style.section }>
       <h1 className={ style.logo }>
         <img src={ logo } alt="Logo do site" />
-        <span>App de Receitas</span>
+        <span>Warn Me</span>
       </h1>
       <form className={ style.form } onSubmit={ (e) => handleSubmitLogin(e, email) }>
         <Input
