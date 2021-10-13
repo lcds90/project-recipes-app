@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useLocation } from 'react-router';
 import Carousel from 'react-multi-carousel';
+import { Link } from 'react-router-dom';
 import style from './Recommendations.module.css';
 
 const Recommendations = ({ recommendations }) => {
@@ -46,7 +47,13 @@ const Recommendations = ({ recommendations }) => {
                   verifyPath ? recipe.strMeal : recipe.strDrink}` }
               />
               <p data-testid={ `${i}-recomendation-title` }>
-                {verifyPath ? recipe.strMeal : recipe.strDrink}
+                <Link
+                  to={ verifyPath
+                    ? `/comidas/${recipe.idMeal}`
+                    : `/bebidas/${recipe.idDrink}` }
+                >
+                  {verifyPath ? recipe.strMeal : recipe.strDrink}
+                </Link>
               </p>
             </article>
           ))}

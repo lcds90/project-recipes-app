@@ -6,6 +6,10 @@ import {
   IngredientList, Instruction,
   Recommendations } from '../../components';
 import Context from '../../context/Context';
+import drinkIcon from '../../images/drinkIcon.svg';
+import mealIcon from '../../images/mealIcon.svg';
+import exploreIcon from '../../images/exploreIcon.svg';
+import profileIcon from '../../images/profileIcon.svg';
 import style from './DetalhesBebidas.module.css';
 
 const DetalhesBebidas = () => {
@@ -42,8 +46,30 @@ const DetalhesBebidas = () => {
     .filter((key) => key[0].includes('strMeasure') && key[1])
     .map((e) => e[1]);
 
+  const renderHeaderDetails = () => (
+    <header className={ style.header }>
+      <Link to="/bebidas">
+        <img src={ drinkIcon } alt="drink icon" />
+      </Link>
+      <Link to="/comidas">
+        <img data-testid="food-bottom-btn" src={ mealIcon } alt="food icon" />
+      </Link>
+      <Link to="/explorar">
+        <img data-testid="explore-bottom-btn" src={ exploreIcon } alt="explore icon" />
+      </Link>
+      <Link to="/perfil">
+        <img
+          data-testid="profile-top-btn"
+          src={ profileIcon }
+          alt="profile-icon"
+        />
+      </Link>
+    </header>
+  );
+
   return (
     <article className={ style.article }>
+      {renderHeaderDetails()}
       <HeaderRecipes
         category={ `${recipe.strCategory} ${recipe.strAlcoholic}` }
         img={ recipe.strDrinkThumb }

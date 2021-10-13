@@ -19,6 +19,10 @@
   font-weight: 200;
 }
 
+.recipe > p > a {
+  color: white;
+}
+
 .recipe > img {
   height: auto;
   width: 60%;

@@ -29,3 +29,15 @@
 .article > button > a {
   color: white;
 }
+
+.header {
+  border-bottom: 5px double var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+  padding-block: 5px;
+  width: 100%;
+}
+
+.header img {
+  filter: invert(100%) drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+}
