@@ -1,3 +1,31 @@
-.button {
-  width: 1px;
+.section {
+  display: grid;
+  gap: 10px;
+  grid: 1fr / repeat(5, 1fr);
+  padding: 10px;
+  place-items: center;
+}
+
+.recipePhoto {
+  border: 5px double white;
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.25);
+  grid-column: span 3;
+  grid-row: span 2;
+  width: 100%;
+}
+
+@media screen and ( min-width : 768px ) {
+
+  .section {
+    grid: repeat(4, 1fr) / repeat(3, 1fr);
+  }
+
+  .section > button {
+    grid-row: span 2;
+  }
+
+  .recipePhoto {
+    grid-column: unset;
+    grid-row: span 4;
+  }
 }

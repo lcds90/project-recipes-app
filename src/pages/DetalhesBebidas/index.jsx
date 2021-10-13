@@ -6,7 +6,8 @@ import {
   IngredientList, Instruction,
   Recommendations } from '../../components';
 import Context from '../../context/Context';
-// import style from './DetalhesBebidas.module.css';
+import style from './DetalhesBebidas.module.css';
+
 const DetalhesBebidas = () => {
   const { id } = useParams();
   const location = useLocation();
@@ -42,7 +43,7 @@ const DetalhesBebidas = () => {
     .map((e) => e[1]);
 
   return (
-    <article>
+    <article className={ style.article }>
       <HeaderRecipes
         category={ `${recipe.strCategory} ${recipe.strAlcoholic}` }
         img={ recipe.strDrinkThumb }
@@ -61,9 +62,6 @@ const DetalhesBebidas = () => {
           handleRecipeStarted({ recipe, path: location.pathname });
           setRecipeStarted(true);
         } }
-        styleBtn={ { position: 'fixed',
-          bottom: '0px',
-          height: '20%' } }
         dataTestId="start-recipe-btn"
       >
         <Link to={ `/bebidas/${recipe.idDrink}/in-progress` }>

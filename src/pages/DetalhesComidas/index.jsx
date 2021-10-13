@@ -38,7 +38,7 @@ const DetalhesComidas = () => {
     .map((e) => e[1]);
 
   return (
-    <article>
+    <article className={ style.article }>
       <HeaderRecipes
         category={ recipe.strCategory }
         img={ recipe.strMealThumb }
@@ -51,23 +51,20 @@ const DetalhesComidas = () => {
         measures={ filterMeasures }
       />
       <Instruction instruction={ recipe.strInstructions } />
-      <div data-testid="video" className={ style.playerWrapper }>
+      <section data-testid="video" className={ style.playerWrapper }>
         <ReactPlayer
           className={ style.reactPlayer }
           url={ recipe.strYoutube }
           width="100%"
           height="100%"
         />
-      </div>
+      </section>
       <Recommendations recommendations={ recommendations } />
       <Button
         onClick={ () => {
           handleRecipeStarted({ recipe, path: location.pathname });
           setRecipeStarted(true);
         } }
-        styleBtn={ { position: 'fixed',
-          bottom: '0px',
-          height: '20%' } }
         dataTestId="start-recipe-btn"
       >
         <Link to={ `/comidas/${recipe.idMeal}/in-progress` }>

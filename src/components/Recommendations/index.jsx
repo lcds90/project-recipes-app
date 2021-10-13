@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useLocation } from 'react-router';
 import Carousel from 'react-multi-carousel';
+import style from './Recommendations.module.css';
 
 const Recommendations = ({ recommendations }) => {
   const responsive = {
@@ -17,7 +18,7 @@ const Recommendations = ({ recommendations }) => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
       slidesToSlide: 1, // optional, default to 1.
     },
   };
@@ -27,14 +28,18 @@ const Recommendations = ({ recommendations }) => {
   const verifyPath = location.pathname.includes('bebidas');
 
   return (
-    <div>
-      Recomendacoes
+    <section className={ style.section }>
+      <h3>Recomendações</h3>
       <Carousel
         responsive={ responsive }
       >
         {recommendations && recommendations.slice(0, SIX)
           .map((recipe, i) => (
-            <article key={ i } data-testid={ `${i}-recomendation-card` }>
+            <article
+              className={ style.recipe }
+              key={ i }
+              data-testid={ `${i}-recomendation-card` }
+            >
               <img
                 src={ verifyPath ? recipe.strMealThumb : recipe.strDrinkThumb }
                 alt={ `Foto referente a receita de ${
@@ -46,7 +51,7 @@ const Recommendations = ({ recommendations }) => {
             </article>
           ))}
       </Carousel>
-    </div>
+    </section>
   );
 };
 

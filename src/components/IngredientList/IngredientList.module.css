@@ -1,3 +1,26 @@
-.button {
-  width: 1px;
+.section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.section > h3 {
+  background: var(--primary-light-color);
+  box-shadow: var(--shadow25);
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.section > ul {
+  list-style: none;
+  width: 80%;
+}
+
+.section > ul > li {
+  border: 0.5px solid black;
+  margin-block: 2.5px;
+  padding-inline: 5px;
+  place-items: center;
 }

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import style from './IngredientList.module.css';
 
 const IngredientList = ({
   isCheckbox,
@@ -7,7 +8,7 @@ const IngredientList = ({
   checkboxIngredients: { list, change },
   measures,
 }) => (
-  <div>
+  <section className={ style.section }>
     <h3>Ingredients</h3>
     <ul>
       {ingredients.map((ingredient, i) => (
@@ -37,7 +38,7 @@ const IngredientList = ({
               {ingredient}
             </li>)))}
     </ul>
-  </div>
+  </section>
 );
 IngredientList.defaultProps = {
   checkboxIngredients: PropTypes.shape({

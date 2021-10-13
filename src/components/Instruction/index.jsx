@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import style from './Instruction.module.css';
 
 const Instructions = ({ instruction }) => (
-  <div data-testid="instructions">
+  <section className={ style.section } data-testid="instructions">
     {instruction}
-  </div>
+  </section>
 );
 
 Instructions.propTypes = {

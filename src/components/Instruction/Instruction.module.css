@@ -1,3 +1,7 @@
-.button {
-  width: 1px;
+.section {
+  border: 5px double var(--primary-light-color);
+  font-size: 0.95rem;
+  line-height: 1rem;
+  padding: 15px 25px;
+  word-break: break-word;
 }

@@ -1,3 +1,11 @@
+.article {
+  background: var(--secondary-color);
+  color: white;
+  height: 100%;
+  padding-bottom: 10vh;
+  width: 100%;
+}
+
 .playerWrapper {
   padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
   position: relative;
@@ -7,4 +15,17 @@
   left: 0;
   position: absolute;
   top: 0;
+}
+
+.article > button {
+  background: var(--primary-color);
+  bottom: 0;
+  color: white;
+  height: 10%;
+  position: fixed;
+  width: 100%;
+}
+
+.article > button > a {
+  color: white;
 }

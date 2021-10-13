@@ -1,4 +1,5 @@
 .button {
+  animation: scale 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   background: var(--primary-dark-color);
   border: 0;
   border-radius: 25px;
@@ -18,4 +19,15 @@
 .button:hover {
   background: var(--secondary-light-color);
   filter: brightness(125%);
+}
+
+@keyframes scale {
+
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }

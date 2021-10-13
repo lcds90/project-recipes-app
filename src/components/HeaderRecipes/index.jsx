@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import Context from '../../context/Context';
 import Liked from '../Liked';
 import Share from '../Share';
+import style from './HeaderRecipes.module.css';
 
 const HeaderRecipes = ({
   category,
@@ -12,8 +13,13 @@ const HeaderRecipes = ({
 }) => {
   const { appState: { recipe } } = useContext(Context);
   return (
-    <section>
-      <img data-testid="recipe-photo" src={ img } alt={ `Imagem do ${title}` } />
+    <section className={ style.section }>
+      <img
+        className={ style.recipePhoto }
+        data-testid="recipe-photo"
+        src={ img }
+        alt={ `Imagem do ${title}` }
+      />
       <h2 data-testid="recipe-title">{title}</h2>
       <h3 data-testid="recipe-category">{category}</h3>
       <Liked recipe={ recipe } dataTestId="favorite-btn" />
