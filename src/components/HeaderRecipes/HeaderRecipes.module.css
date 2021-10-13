@@ -1,4 +1,4 @@
-.section {
+.header {
   display: grid;
   gap: 10px;
   grid: 1fr / repeat(5, 1fr);
@@ -6,12 +6,12 @@
   place-items: center;
 }
 
-.section > h2 {
+.header > h2 {
   font-size: 2rem;
   font-weight: 700;
 }
 
-.section > h3 {
+.header > h3 {
   color: lightgrey;
   font-size: 1rem;
   font-style: italic;
@@ -28,11 +28,11 @@
 
 @media screen and ( min-width : 768px ) {
 
-  .section {
+  .header {
     grid: repeat(4, 1fr) / repeat(3, 1fr);
   }
 
-  .section > button {
+  .header > button {
     grid-row: span 2;
   }
 

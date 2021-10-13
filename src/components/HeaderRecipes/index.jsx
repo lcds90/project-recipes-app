@@ -13,7 +13,7 @@ const HeaderRecipes = ({
 }) => {
   const { appState: { recipe } } = useContext(Context);
   return (
-    <section className={ style.section }>
+    <header className={ style.header }>
       <img
         className={ style.recipePhoto }
         data-testid="recipe-photo"
@@ -24,7 +24,7 @@ const HeaderRecipes = ({
       <h3 data-testid="recipe-category">{category}</h3>
       <Liked recipe={ recipe } dataTestId="favorite-btn" />
       <Share destinationUrl={ url } dataTestId="share-btn" />
-    </section>
+    </header>
   );
 };
 
