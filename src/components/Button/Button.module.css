@@ -6,11 +6,16 @@
   color: white;
   cursor: pointer;
   padding: 10px;
-  transition: background 3s ease;
+  transition: background 0.75s ease , filter 2s linear;
 }
 
 .button:disabled {
   background: grey;
   color: black;
   cursor: not-allowed;
+}
+
+.button:hover {
+  background: var(--secondary-light-color);
+  filter: brightness(125%);
 }

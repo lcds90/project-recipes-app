@@ -27,7 +27,12 @@ const Header = (props) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
 
   const searchBarButton = () => (
-    <button type="button" onClick={ () => setShowSearchBar(!showSearchBar) }>
+    <button
+      className={ style.searchBtn }
+      onClick={ () => setShowSearchBar(!showSearchBar) }
+      type="button"
+      title="Pesquisar"
+    >
       <img data-testid="search-top-btn" src={ searchIcon } alt="search-icon" />
     </button>
   );

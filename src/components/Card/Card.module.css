@@ -9,10 +9,13 @@
   max-width: 90%;
   place-items: center;
   text-decoration: none;
+  transition: background 1.5s ease , filter 1s linear , border 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 90%;
 }
 
 .card:hover {
+  background: var(--secondary-color);
+  border: 5px double var(--secondary-light-color);
   text-decoration: none;
 }
 

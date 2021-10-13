@@ -17,6 +17,27 @@
   filter: invert(1);
 }
 
+.searchBtn {
+  background: var(--primary-color);
+  border: 0;
+  border-radius: 5px;
+  height: 100%;
+  outline: 1px double rgba(255, 255, 255, 0.25);
+  outline-offset: 5px;
+  padding: 2px;
+  transition: background 2s ease , filter 2s ease;
+  width: 10%;
+}
+
+.searchBtn:hover {
+  background: var(--secondary-light-color);
+  filter: brightness(125%);
+}
+
+.searchBtn > img {
+  filter: grayscale(100%);
+}
+
 .searchBar {
   animation: fadeFromTop 1.5s ease;
   background: #363636;
