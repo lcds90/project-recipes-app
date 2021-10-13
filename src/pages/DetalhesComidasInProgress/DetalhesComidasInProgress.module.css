@@ -2,7 +2,8 @@
   background: var(--secondary-color);
   color: white;
   display: grid;
-  grid: 1fr / 1fr 1fr;
+  grid: 1fr / 1fr;
+  min-height: 100vh;
 }
 
 .section > header {
@@ -15,9 +16,17 @@
 }
 
 .section > section:nth-of-type( 1 ) {
-  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light-color));
-  color: white;
-  display: grid;
-  font-size: 1.05rem;
-  place-items: center;
+  grid-column: span 2;
+}
+
+@media screen and ( min-width : 768px ) {
+
+  .section {
+    grid: 1fr / 1fr 1fr;
+  }
+
+  .section > section:nth-of-type( 1 ) {
+    grid-column: span 1;
+  }
+
 }

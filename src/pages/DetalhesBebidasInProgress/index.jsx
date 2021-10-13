@@ -3,6 +3,7 @@ import { useLocation, useParams, useHistory } from 'react-router';
 import { Button, HeaderRecipes, IngredientList, Instruction } from '../../components';
 import Context from '../../context/Context';
 import { filterIngredients, filterMeasures } from './helpers';
+import style from './DetalhesBebidasInProgress.module.css';
 
 const DetalhesBebidasInProgress = () => {
   const {
@@ -46,7 +47,7 @@ const DetalhesBebidasInProgress = () => {
   };
 
   return (
-    <div>
+    <section className={ style.section }>
       <HeaderRecipes
         category={ recipe.strCategory }
         img={ recipe.strDrinkThumb }
@@ -72,7 +73,7 @@ const DetalhesBebidasInProgress = () => {
       >
         Finalizar receita
       </Button>
-    </div>
+    </section>
   );
 };
 

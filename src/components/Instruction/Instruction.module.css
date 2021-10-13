@@ -1,7 +1,11 @@
 .section {
+  background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light-color));
   border: 5px double var(--primary-light-color);
-  font-size: 0.95rem;
+  color: white;
+  display: grid;
+  font-size: 1.05rem;
   line-height: 1rem;
   padding: 15px 25px;
+  place-items: center;
   word-break: break-word;
 }
