@@ -12,8 +12,6 @@
   display: grid;
   gap: 5px;
   grid: repeat(2, 1fr) / repeat(3, 1fr);
-  padding: 5px;
-  width: 80%;
 }
 
 .recipes {
@@ -21,11 +19,10 @@
   gap: 5vh 2vw;
   grid-auto-rows: max-content;
   grid-template-columns: repeat(2, 1fr);
+  margin-top: 2vh;
   overflow: hidden;
-  padding: 25px;
   padding-bottom: 10vh;
   place-items: center;
-
 }
 
 .pages {

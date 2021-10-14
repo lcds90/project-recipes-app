@@ -144,7 +144,7 @@ const Header = (props) => {
         />
       </Button>
       <h1 data-testid="page-title">{title}</h1>
-      <h2>{verifyImgPath()}</h2>
+      {verifyImgPath()}
       {displaySearchBtn && searchBarButton()}
       {showSearchBar && searchBar()}
     </header>
