@@ -1,10 +1,10 @@
 .header {
-  align-items: center;
   background: var(--secondary-color);
   color: white;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   padding: 5px;
+  place-items: center;
   position: relative;
   width: 100%;
 }
@@ -13,20 +13,23 @@
   font-size: 1.5rem;
 }
 
-.header img {
-  filter: invert(1);
+.header > h2 {
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 
 .searchBtn {
   background: var(--primary-color);
   border: 0;
   border-radius: 5px;
+  grid-column: span 3;
   height: 100%;
   outline: 1px double rgba(255, 255, 255, 0.25);
   outline-offset: 5px;
   padding: 2px;
   transition: background 2s ease , filter 2s ease;
-  width: 10%;
+  width: 100%;
 }
 
 .searchBtn:hover {
@@ -36,6 +39,20 @@
 
 .searchBtn > img {
   filter: grayscale(100%);
+}
+
+.logo {
+  height: auto;
+  width: 80%;
+}
+
+.explorar {
+  height: auto;
+  width: 80%;
+}
+
+.header > button img {
+  filter: invert(1);
 }
 
 .searchBar {
@@ -97,7 +114,15 @@
 
   .searchBar {
     grid: 1fr / repeat(3, 1fr);
+  }
 
+  .header > h2 {
+    max-width: 40%;
+    width: 40%;
+  }
+
+  .explorar {
+    width: 40%;
   }
 }
 

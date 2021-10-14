@@ -41,7 +41,7 @@ export const saveRecipe = (recipe, type) => {
     alcoholicOrNot: '',
     name: recipe.strMeal,
     image: recipe.strMealThumb,
-    doneDate: `${date.getDate()}/${date.getMonth}/${date.getFullYear()}`,
+    doneDate: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
     tags: recipe.strTags ? [...recipe.strTags.split(',')] : [],
   };
   const drinkToSave = {
@@ -52,7 +52,7 @@ export const saveRecipe = (recipe, type) => {
     alcoholicOrNot: recipe.strAlcoholic,
     name: recipe.strDrink,
     image: recipe.strDrinkThumb,
-    doneDate: `${date.getDate()}/${date.getMonth}/${date.getFullYear()}`,
+    doneDate: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
     tags: recipe.strTags ? [...recipe.strTags.split(',')] : [],
   };
   return type === 'comida' ? mealToSave : drinkToSave;

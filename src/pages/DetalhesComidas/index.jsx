@@ -81,8 +81,9 @@ const DetalhesComidas = () => {
         <ReactPlayer
           className={ style.reactPlayer }
           url={ recipe.strYoutube }
-          width="60%"
-          height="60%"
+          width="70%"
+          height="70%"
+          controls
         />
       </section>
       <Recommendations recommendations={ recommendations } />

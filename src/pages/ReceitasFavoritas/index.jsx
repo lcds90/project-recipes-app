@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../../context/Context';
 import { Header, FilterRecipes, Share, Liked } from '../../components';
+import style from './ReceitasFavoritas.module.css';
 
 const ReceitasFavoritas = () => {
   const { appState: { favoriteRecipes } } = useContext(Context);
@@ -15,22 +16,20 @@ const ReceitasFavoritas = () => {
     recipesArray
       .filter((recipe) => (recipe.type.includes(selectedCategory)))
       .map((recipe, index) => (
-        <div key={ index } className="horizontal-card">
+        <article key={ index } className={ style.card }>
           <Link
             to={ recipe.type === 'comida'
               ? `/comidas/${recipe.id}`
               : `/bebidas/${recipe.id}` }
+            className={ style.imgCard }
           >
             <img
               data-testid={ `${index}-horizontal-image` }
               src={ recipe.image }
               alt={ `receita ${index}` }
-              style={ { width: '25%' } }
             />
             <p data-testid={ `${index}-horizontal-name` }>{recipe.name}</p>
           </Link>
-          {/* { recipe.type === 'comida' && <p>{`${recipe.area} - ${recipe.category}`}</p> }
-          { recipe.type === 'bebida' && <p>{recipe.alcoholicOrNot}</p> } */}
           <p data-testid={ `${index}-horizontal-top-text` }>
             { recipe.type === 'comida' ? `${recipe.area} - ${recipe.category}`
               : recipe.alcoholicOrNot }
@@ -49,7 +48,7 @@ const ReceitasFavoritas = () => {
           />
 
           <Liked recipe={ recipe } dataTestId={ `${index}-horizontal-favorite-btn` } />
-        </div>
+        </article>
       ))
   );
 
@@ -59,7 +58,9 @@ const ReceitasFavoritas = () => {
     <>
       <Header title="Receitas Favoritas" displaySearchBtn={ false } />
       <FilterRecipes onClick={ ({ target: { name } }) => filterByCategory(name) } />
-      { renderCards(favoriteRecipes) }
+      <section className={ style.section }>
+        { renderCards(favoriteRecipes) }
+      </section>
     </>
   );
 };

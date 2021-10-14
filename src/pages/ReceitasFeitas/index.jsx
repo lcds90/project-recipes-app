@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../../context/Context';
 import { Header, FilterRecipes, Share } from '../../components';
+import style from './ReceitasFeitas.module.css';
 
 const ReceitasFeitas = () => {
   const { appState: { doneRecipes } } = useContext(Context);
@@ -15,11 +16,12 @@ const ReceitasFeitas = () => {
     recipesArray
       .filter((recipe) => (recipe.type.includes(selectedCategory)))
       .map((recipe, index) => (
-        <div key={ index } className="horizontal-card">
+        <article key={ index } className={ style.card }>
           <Link
             to={ recipe.type === 'comida'
               ? `/comidas/${recipe.id}`
               : `/bebidas/${recipe.id}` }
+            className={ style.imgCard }
           >
             <img
               data-testid={ `${index}-horizontal-image` }
@@ -57,7 +59,7 @@ const ReceitasFeitas = () => {
                 : `/bebidas/${recipe.id}`)
             }
           />
-        </div>
+        </article>
       ))
   );
 
@@ -67,7 +69,9 @@ const ReceitasFeitas = () => {
     <>
       <Header title="Receitas Feitas" displaySearchBtn={ false } />
       <FilterRecipes onClick={ ({ target: { name } }) => filterByCategory(name) } />
-      { renderCards(doneRecipes) }
+      <section className={ style.section }>
+        { renderCards(doneRecipes) }
+      </section>
     </>
   );
 };

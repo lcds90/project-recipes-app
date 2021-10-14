@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Header, Footer } from '../../components';
+import { Button, Header, Footer } from '../../components';
 import fetchRandomRecipe from '../../services/fetchRandomRecipe';
+import style from './ExplorarComidas.module.css';
 
 const ExplorarComidas = () => {
   const location = useLocation();
@@ -27,23 +28,25 @@ const ExplorarComidas = () => {
   return (
     <>
       <Header title="Explorar Comidas" displaySearchBtn={ false } />
-      <Link to={ `/explorar/${urlLocation}/ingredientes` }>
-        <button type="button" data-testId="explore-by-ingredient">
-          Por Ingredientes
-        </button>
-      </Link>
-      {urlLocation === 'comidas' && (
-        <Link to={ `/explorar/${urlLocation}/area` }>
-          <button type="button" data-testId="explore-by-area">
-            Por Local de Origem
-          </button>
+      <section className={ style.section }>
+        <Link to={ `/explorar/${urlLocation}/ingredientes` }>
+          <Button dataTestId="explore-by-ingredient">
+            Por Ingredientes
+          </Button>
         </Link>
-      )}
-      <Link to={ randomUrl }>
-        <button type="button" data-testId="explore-surprise">
-          Me Surpreenda!
-        </button>
-      </Link>
+        {urlLocation === 'comidas' && (
+          <Link to={ `/explorar/${urlLocation}/area` }>
+            <Button dataTestId="explore-by-area">
+              Por Local de Origem
+            </Button>
+          </Link>
+        )}
+        <Link to={ randomUrl }>
+          <Button dataTestId="explore-surprise">
+            Me Surpreenda!
+          </Button>
+        </Link>
+      </section>
       <Footer />
     </>
   );

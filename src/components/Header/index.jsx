@@ -3,6 +3,11 @@ import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import profileIcon from '../../images/profileIcon.svg';
 import searchIcon from '../../images/searchIcon.svg';
+import pusheenComputer from '../../images/pusheen-computer.gif';
+import pusheenDrinking from '../../images/pusheen-drinking.gif';
+import pusheenEating from '../../images/pusheen-eating.gif';
+import pusheenExploring from '../../images/pusheen-searching.gif';
+import pusheenWaiting from '../../images/pusheen-want-to-eat.gif';
 import Input from '../Input';
 import Button from '../Button';
 import Context from '../../context/Context';
@@ -84,7 +89,50 @@ const Header = (props) => {
       </Button>
     </section>
   );
-  // VOLTAR DAQUI
+
+  const verifyImgPath = () => {
+    const objImg = {
+      comidas: pusheenEating,
+      bebidas: pusheenDrinking,
+      explorar: pusheenExploring,
+      perfil: pusheenWaiting,
+      receitas: pusheenComputer,
+    };
+
+    const path = location.pathname.toLowerCase();
+
+    if (path.includes('explorar')) {
+      return <img className={ style.explorar } src={ objImg.explorar } alt="" />;
+    }
+    if (path.includes('comidas')) {
+      return (<img
+        className={ style.logo }
+        src={ objImg.comidas }
+        alt=""
+      />);
+    }
+    if (path.includes('bebidas')) {
+      return (<img
+        className={ style.logo }
+        src={ objImg.bebidas }
+        alt=""
+      />);
+    }
+    if (path.includes('perfil')) {
+      return (<img
+        className={ style.explorar }
+        src={ objImg.perfil }
+        alt=""
+      />);
+    }
+    if (path.includes('receitas')) {
+      return (<img
+        className={ style.logo }
+        src={ objImg.receitas }
+        alt=""
+      />);
+    }
+  };
 
   return (
     <header className={ style.header }>
@@ -96,6 +144,7 @@ const Header = (props) => {
         />
       </Button>
       <h1 data-testid="page-title">{title}</h1>
+      <h2>{verifyImgPath()}</h2>
       {displaySearchBtn && searchBarButton()}
       {showSearchBar && searchBar()}
     </header>

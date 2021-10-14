@@ -1,3 +1,56 @@
-.button {
-  width: 1px;
+.section {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  background: var(--secondary-color);
+  display: grid;
+  grid: repeat(3, 1fr) / repeat(2, 1fr);
+  padding: 1rem;
+  place-items: center;
+  width: 100%;
+}
+
+.card > p {
+  background: var(--primary-light-color);
+  border-radius: 5px;
+  color: var(--secondary-light-color);
+  font-style: italic;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.imgCard {
+  display: grid;
+  grid-row: span 3;
+  height: 100%;
+  place-items: center;
+  width: 100%;
+}
+
+.imgCard > img {
+  border: 5px double var(--primary-color);
+  box-shadow: var(--shadow25);
+  width: 100%;
+}
+
+.imgCard > p {
+  color: var(--primary-color);
+  cursor: pointer;
+  display: grid;
+  font-weight: 700;
+  place-items: center;
+}
+
+@media screen and ( min-width : 768px ) {
+
+  .section {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

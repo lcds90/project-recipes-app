@@ -67,7 +67,7 @@ const DetalhesBebidasInProgress = () => {
         disabled={ recipeStillInProgress }
         dataTestId="finish-recipe-btn"
         onClick={ () => {
-          handleDoneRecipe(recipe, 'comida');
+          handleDoneRecipe(recipe, 'bebida');
           history.push('/receitas-feitas');
         } }
       >

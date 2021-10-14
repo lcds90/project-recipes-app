@@ -1,3 +1,8 @@
-.button {
-  width: 1px;
+.header {
+  background: var(--primary-color);
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 5px;
+  width: 100%;
 }
