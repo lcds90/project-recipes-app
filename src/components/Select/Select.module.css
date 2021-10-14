@@ -1,3 +1,17 @@
-.button {
-  width: 1px;
+.section {
+  display: grid;
+  padding: 15px;
+  place-items: center;
+  width: 100%;
+}
+
+.select {
+  background: var(--secondary-color);
+  border: 0;
+  border-radius: 5px;
+  color: var(--primary-light-color);
+  font-weight: 600;
+  margin: auto;
+  text-align: center;
+  width: 50%;
 }

@@ -21,9 +21,11 @@
   gap: 5vh 2vw;
   grid-auto-rows: max-content;
   grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
   padding: 25px;
   padding-bottom: 10vh;
   place-items: center;
+
 }
 
 .pages {
@@ -46,7 +48,6 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 25px;
     padding-bottom: 15vh;
-
   }
 
   .pages {

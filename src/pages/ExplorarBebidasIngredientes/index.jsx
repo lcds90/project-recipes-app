@@ -24,32 +24,32 @@ const ExplorarBebidasIngredientes = () => {
   return (
     <>
       <Header title="Explorar Ingredientes" displaySearchBtn={ false } />
-
-      {ingredientsList.slice(0, TWELVE)
-        .map(({ strIngredient1: ingredient }, i) => (
-          <article
-            className={ style.article }
-            key={ `${i}-${ingredient}` }
-            data-testid={ `${i}-ingredient-card` }
-          >
-            <Link
-              onClick={ () => handleSearch(
-                { query: ingredient, typeSearch: 'byIngredient', location },
-              ) }
-              to="/bebidas"
+      <section className={ style.section }>
+        {ingredientsList.slice(0, TWELVE)
+          .map(({ strIngredient1: ingredient }, i) => (
+            <article
+              className={ style.article }
+              key={ `${i}-${ingredient}` }
+              data-testid={ `${i}-ingredient-card` }
             >
-              <img
-                alt={ `Foto do ingrediente ${ingredient}` }
-                data-testid={ `${i}-card-img` }
-                src={ `https://www.thecocktaildb.com/images/ingredients/${ingredient}-Small.png` }
-              />
-              <p data-testid={ `${i}-card-name` }>
-                {ingredient}
-              </p>
-            </Link>
-          </article>
-        ))}
-
+              <Link
+                onClick={ () => handleSearch(
+                  { query: ingredient, typeSearch: 'byIngredient', location },
+                ) }
+                to="/bebidas"
+              >
+                <img
+                  alt={ `Foto do ingrediente ${ingredient}` }
+                  data-testid={ `${i}-card-img` }
+                  src={ `https://www.thecocktaildb.com/images/ingredients/${ingredient}-Small.png` }
+                />
+                <p data-testid={ `${i}-card-name` }>
+                  {ingredient}
+                </p>
+              </Link>
+            </article>
+          ))}
+      </section>
       <Footer />
     </>
   );

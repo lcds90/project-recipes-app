@@ -1,8 +1,30 @@
-.article {
+.section {
   display: grid;
+  grid: 1fr / repeat(auto-fit, minmax(7rem, 1fr));
+  padding-bottom: 10vh;
+  place-items: center;
+}
+
+.article {
+  height: 100%;
+  padding: 5px;
   width: 100%;
 }
 
-.article > * {
+.article > a {
+  background: var(--primary-color);
+  color: black;
+  display: grid;
+  font-size: 1rem;
+  grid: 0.15fr 1fr / 1fr;
+  max-height: 100%;
+  max-width: 100%;
+  place-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.article > a > img {
+  height: auto;
   width: 100%;
 }

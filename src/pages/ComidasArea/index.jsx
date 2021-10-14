@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { Footer, Header, Select, Card } from '../../components';
+import style from './ComidasArea.module.css';
 
 const ComidasArea = () => {
   const [areaMeals, setAreaMeals] = useState([]);
@@ -25,7 +26,6 @@ const ComidasArea = () => {
     try {
       const r = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
       const data = await r.json();
-      console.log(data.meals);
       return data.meals;
     } catch (error) {
       console.error(error);
@@ -55,7 +55,7 @@ const ComidasArea = () => {
     const offset = currentPage * PER_PAGE;
     const pageCount = Math.ceil(meals.length / PER_PAGE);
     return (
-      <>
+      <section className={ style.recipes }>
         { meals
           .slice(offset, offset + PER_PAGE)
           .map((meal, i) => (
@@ -63,19 +63,20 @@ const ComidasArea = () => {
               id={ meal.idMeal }
               img={ meal.strMealThumb }
               name={ meal.strMeal }
-              key={ i }
+              key={ meal.idMeal }
               mealOrDrink="comidas"
               index={ i }
             />
           )) }
         <ReactPaginate
+          containerClassName={ style.pages }
           previousLabel="Anterior"
           nextLabel="Proxima"
           breakLabel="..."
           pageCount={ pageCount }
           onPageChange={ handlePageClick }
         />
-      </>);
+      </section>);
   };
   if (!areaMeals) return <div>Carregando</div>;
 
