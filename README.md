@@ -4,9 +4,7 @@
 
 Repositório possuí projeto desenvolvido no período que estive na <b>Trybe</b>.
 
-Abordando sobre conceitos de ...
-
-Onde teve como desafio desenvolver ...
+Abordando sobre conceitos de integração com duas API para disponibilizar dados, utilizando a sua distribuição através de Context API com a biblioteca React para criação da interface do usuário, onde teve como desafio desenvolver um aplicativo mobile-first onde é feito sugestão de comidas e bebidas com possibilidade de salvar os mesmos e marcar progresso de preparo referente ás receitas.
   
 <a href="https://www.betrybe.com/" target="_blank">
 <img src="https://freecourse.betrybe.com/images/trybe-logo-e10dbaaa26462aa149b81a924b00df07.png?vsn=d" width="250px">
