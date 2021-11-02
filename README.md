@@ -1,8 +1,6 @@
-# Projeto App de Receitas
-
 <div align=center>
 
-# 🟢 Trybe - [Nome do projeto](https://link-do-projeto/) 🟢
+# 🟢 Trybe - [App de Receitas](http://pusheen-suggestion.vercel.app/) 🟢
 
 Repositório possuí projeto desenvolvido no período que estive na <b>Trybe</b>.
 
