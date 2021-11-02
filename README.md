@@ -20,13 +20,15 @@ Abordando sobre conceitos de integração com duas API para disponibilizar dados
 
 * * *
 
-### 🖥 Projeto do Mõdulo *****
+### 🖥 Projeto do Módulo Desenvolvimento Front-end
 
-Este projeto foi desenvolvido durante o módulo xxx na trybe, referente ao bloco XX.
+Este projeto foi desenvolvido durante o módulo de `Desenvolvimento Front-end` na escola Trybe, referente ao bloco 19.
 
-## 🖼 Screenshot das telas da aplicação <br/>
-<img src="https://s3.amazonaws.com/gupy5/production/companies/1673/career/2546/images/2020-12-07_13-18_logo.png" width="250px" />
+## 🖼 Screenshot das telas da aplicação
 
+<div align="center">
+<img src="/app.png" width="500px" />
+</div>
 
 
 ## :mortar_board: Autores
